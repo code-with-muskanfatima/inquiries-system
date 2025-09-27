@@ -53,11 +53,6 @@ export function NavList() {
         label="Calendar"
         icon={<Calendar className="h-4 w-4" />}
       />
-      <NavItem
-      href="/practice-table-collapsible"
-      label="practice-table-collapsible"
-      icon={<Grid3x2 className="h-4 w-4"/>}
-      />
     </div>
   );
 }
