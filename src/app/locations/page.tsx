@@ -236,14 +236,14 @@ export default function LocationManagementPage() {
 
           {/* Table */}
           <div className="border rounded-md">
-            <div className="max-h-[700px] max-w-[900px] overflow-hidden">
+            <div className="max-h-[700px] max-w-full overflow-x-auto overflow-y-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
                     {sortableColumns.map((col) => (
                       <TableHead
                         key={col.key}
-                        className="sticky top-0 z-10 cursor-pointer"
+                        className="sticky top-0 z-10 bg-white cursor-pointer"
                         onClick={() => handleSort(col.key)}
                       >
                         <div className="flex items-center gap-1">
