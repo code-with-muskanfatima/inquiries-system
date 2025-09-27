@@ -15,8 +15,6 @@ import {
 import {
   TriangleAlert,
   MessageSquare,
-  MapPin,
-  Eye,
   Plus,
   X,
 } from "lucide-react";
