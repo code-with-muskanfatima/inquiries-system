@@ -8,13 +8,15 @@ type SidebarProps = {
 
 export function Sidebar({ isSidebarOpen }: SidebarProps) {
   return (
-    <aside
-      className={`fixed top-0 left-0 h-full w-64 border-r bg-gray-100 z-50 flex flex-col justify-between
-        transform transition-transform duration-300
-        ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-        lg:translate-x-0
-      `}
-    >
+ <aside
+  className={`fixed top-0 left-0 h-full w-68  border-r bg-gray-100 z-50 flex flex-col justify-between
+    transform transition-transform duration-300
+    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+    lg:translate-x-0
+  `}
+>
+
+
       <div>
         <div className="px-4 py-4 text-md font-semibold">
           Inquiry Management System

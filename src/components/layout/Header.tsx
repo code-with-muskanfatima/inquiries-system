@@ -9,7 +9,7 @@ type HeaderProps = {
 
 export function Header({ isSidebarOpen, setIsSidebarOpen }: HeaderProps) {
   return (
-    <div className="flex items-center border-b border-gray-200 gap-3 px-4 py-3 bg-white">
+    <div className="flex items-center border-b border-gray-200 gap-3 px-8 py-3 bg-white">
       
       {/* Sidebar toggle button */}
       <button

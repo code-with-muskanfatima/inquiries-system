@@ -184,7 +184,7 @@ export default function InquiriesPage() {
 
   return (
     <AppLayout>
-      <div className="p-6">
+      <div className="p-4">
   {/* Header */}
   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-2">
     <h1 className="text-lg sm:text-xl font-semibold">Inquiry Oversight</h1>
@@ -274,8 +274,8 @@ export default function InquiriesPage() {
 
   {/* Scrollable Table */}
   <div className="border rounded-md">
-    <div className="overflow-x-auto">
-      <Table className="min-w-[800px]">
+    <div className="max-w-[890px]">
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHead>ID</TableHead>

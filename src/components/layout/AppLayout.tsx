@@ -49,7 +49,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }`}
 >
   <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-  <main className="flex-1 overflow-y-auto p-4">{children}</main>
+  <main className="flex-1 px-8 py-4 ">{children}</main>
 </div>
 
 
