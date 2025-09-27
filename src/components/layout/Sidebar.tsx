@@ -1,30 +1,69 @@
 "use client";
 
-import { NavList } from "../ui/NavList";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  Users,
+  MapPin,
+  Tags,
+  Calendar,
+  ListChecks,
+} from "lucide-react";
 
 type SidebarProps = {
   isSidebarOpen: boolean;
 };
 
 export function Sidebar({ isSidebarOpen }: SidebarProps) {
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
+    { name: "Inquiries", icon: ListChecks, href: "/inquiries" },
+    { name: "Users", icon: Users, href: "/users" },
+    { name: "Locations", icon: MapPin, href: "/locations" },
+    { name: "Attributes", icon: Tags, href: "/attributes" },
+    { name: "Event Types", icon: Calendar, href: "/event-types" },
+    { name: "Calendar", icon: Calendar, href: "/calendar" },
+    { name: "Practice Table collapsible", icon: LayoutDashboard, href: "/practice-table" },
+  ];
+
   return (
     <aside
-      className={`fixed top-0 left-0 h-full w-64 border-r bg-gray-100 z-50 flex flex-col justify-between
-        transform transition-transform duration-300
-        ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-        lg:translate-x-0
-      `}
+      className={cn(
+        "bg-white border-r h-full flex flex-col transition-all",
+        isSidebarOpen ? "w-64" : "w-20"
+      )}
     >
-      <div>
-        <div className="px-4 py-4 text-md font-semibold">
-          Inquiry Management System
-        </div>
-        <NavList />
-      </div>
+      <div className="p-4 font-bold text-lg">Inquiry Management System</div>
 
-      <div className="px-6 py-4">
-        <h2 className="font-bold text-sm">admin</h2>
-        <span className="text-gray-400 text-xs">admin@system.com</span>
+      <nav className="flex-1">
+        <ul className="space-y-1">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = pathname.startsWith(item.href);
+
+            return (
+              <li
+                key={item.name}
+                className={cn(
+                  "px-4 py-2 flex items-center gap-2 rounded-md cursor-pointer hover:bg-gray-100",
+                  isActive && "bg-gray-100 font-medium text-black"
+                )}
+              >
+                <Icon className="h-5 w-5" />
+                {isSidebarOpen && item.name}
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      {/* Footer */}
+      <div className="p-4 text-sm border-t">
+        <div className="font-semibold">admin</div>
+        <div className="text-gray-500">admin@system.com</div>
       </div>
     </aside>
   );
