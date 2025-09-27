@@ -236,7 +236,7 @@ export default function LocationManagementPage() {
 
           {/* Table */}
           <div className="border rounded-md">
-            <div className="max-h-[700px] max-w-[900px]">
+            <div className="max-h-[700px] max-w-[900px] overflow-hidden">
               <Table>
                 <TableHeader>
                   <TableRow>
