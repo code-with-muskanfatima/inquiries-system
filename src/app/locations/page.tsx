@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import AppLayout from "@/components/layout/AppLayout";
+import Link from "next/link";
 
 type Location = {
   id: number;
@@ -88,16 +89,16 @@ export default function LocationManagementPage() {
       return {
         id,
         name: [
-          "Mr. Lucio Koenig",
-          "Prof. Kathleen Strosin IV",
-          "Brenda Heller DVM",
-          "Dr. Victor Emard",
-          "Jeramie Schimmel",
-          "Jennifer Stoltenberg DDS",
-          "Prof. Cade Kertzmann Sr.",
-          "Clarabelle Purdy",
-          "Prof. Dejon Hickle I",
-          "Caesar Nikolaus V",
+          "Mr. Ali",
+          "Prof. Umair",
+          "Muskan Fatima",
+          "Dr. Ayesha",
+          "Hajra Qadir",
+          "Neha Rana",
+          "Prof. Iqra",
+          "Zoha Rehman",
+          "Prof. Amir",
+          "Sir. Abdullah",
           "Sana Ahmed",
           "Ayesha Khan",
         ][i],
@@ -147,7 +148,7 @@ export default function LocationManagementPage() {
   };
 
   const sortedLocations = React.useMemo(() => {
-    let filtered = locations.filter((loc) => {
+   const filtered = locations.filter((loc) => {
       if (statusFilter !== "All" && loc.status !== statusFilter) return false;
       if (!query) return true;
       return loc.name.toLowerCase().includes(query.toLowerCase());
@@ -203,7 +204,11 @@ export default function LocationManagementPage() {
                 onChange={(e) => setQuery(e.target.value)}
                 className="max-w-xs"
               />
-              <Select onValueChange={(v) => setStatusFilter(v as any)} defaultValue="All">
+              <Select
+  onValueChange={(v: "All" | "Active" | "Inactive") => setStatusFilter(v)}
+  defaultValue="All"
+>
+
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="All Status" />
                 </SelectTrigger>
@@ -253,7 +258,7 @@ export default function LocationManagementPage() {
                   {sortedLocations.map((loc) => (
                     <TableRow key={loc.id}>
                       <TableCell>
-                        <a href="/" className="text-blue-700 underline">{loc.id}</a>
+                        <Link href="/" className="text-blue-700 underline">{loc.id}</Link>
                       </TableCell>
                       <TableCell>
                         <Avatar className="h-8 w-8">

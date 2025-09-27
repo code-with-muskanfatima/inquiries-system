@@ -5,13 +5,7 @@ import {
   Search,
   Plus,
   MoreVertical,
-  Calendar as CalendarIcon,
   ScrollText,
-  ArrowUpDown,
-  ArrowUp,
-  ArrowDown,
-  ChevronUp,
-  ChevronDown,
   ChevronsUpDown,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -167,20 +161,6 @@ export default function InquiriesPage() {
     }
     return 0;
   });
-
-  // 🔹 Helper: render sort icon
-  const renderSortIcon = (key: string) => {
-    if (sortConfig.key !== key) {
-      return <ArrowUpDown className="inline w-4 h-4 ml-1 text-gray-400" />;
-    }
-    if (sortConfig.direction === "asc") {
-      return <ArrowUp className="inline w-4 h-4 ml-1 text-blue-600" />;
-    }
-    if (sortConfig.direction === "desc") {
-      return <ArrowDown className="inline w-4 h-4 ml-1 text-blue-600" />;
-    }
-    return null;
-  };
 
   return (
     <AppLayout>
