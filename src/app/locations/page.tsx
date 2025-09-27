@@ -243,7 +243,7 @@ export default function LocationManagementPage() {
                     {sortableColumns.map((col) => (
                       <TableHead
                         key={col.key}
-                        className="sticky top-0 z-10 bg-white cursor-pointer"
+                        className="sticky top-0 z-10 cursor-pointer"
                         onClick={() => handleSort(col.key)}
                       >
                         <div className="flex items-center gap-1">
