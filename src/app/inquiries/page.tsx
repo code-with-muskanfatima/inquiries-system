@@ -254,7 +254,7 @@ export default function InquiriesPage() {
 
   {/* Scrollable Table */}
   <div className="border rounded-md">
-    <div className="max-w-[890px]">
+    <div className="max-w-[900px]">
       <Table>
         <TableHeader>
           <TableRow>
